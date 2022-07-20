@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  text-align: center;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#gallery{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 10px;
+}
+
+.item{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.small_img{
+  max-width: 250px;
+  max-height: 250;
+  object-fit: cover;
+  margin: 10px;
+}
+
+#slider{
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#big_picture{
+  align-self: center;
+}
+
+.btn{
+  margin: 0px 5px;
+  width: 45px;
+  height: 45px;
+  background-color: #e74c3c;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+.btn.left{
+  transform: rotate(180deg);
+}
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 20px;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px;
+}
+.btn:before {
+  transform-origin: 100% 100%;
+  transform: translate(-75%, -50%) rotate(45deg);
+}
+.btn:after {
+  transform-origin: 100% 0%;
+  transform: translate(-75%, -50%) rotate(-45deg);
+}
+
+#itemCard{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#itemCard>button{
+  margin-right: 10px;
+}
