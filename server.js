@@ -3,11 +3,9 @@ const fs = require('fs')
 
 const server = http.createServer((req, res) => {
     console.log(req.url)
-    const body = req.url === '/style.css'
-        ? fs.readFileSync('./jslvl2_lesson1/style.css')
-        : req.url === '/script.js'
-            ? fs.readFileSync('./jslvl2_lesson1/script.js')
-            : fs.readFileSync('./jslvl2_lesson1/index.html')
+    const body = req.url === '/'
+        ? fs.readFileSync('./jslvl2_lesson1/index.html')
+        : fs.readFileSync('./jslvl2_lesson1/' + req.url)
     res.end(body)
 })
 
