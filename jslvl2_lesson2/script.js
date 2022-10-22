@@ -52,3 +52,14 @@ class Cart extends GoodItem {
 }
 
 const ListInstance = new List()
+
+function init() {
+    const buyBtn = document.getElementsByClassName("buy-button");
+    Array.prototype.forEach.call(buyBtn, function (el) {
+        el.addEventListener('click', function () {
+            console.log('click');
+        });
+    })
+}
+
+window.onload = init;
