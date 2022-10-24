@@ -27,8 +27,8 @@ class List {
         })
         const buyBtn = document.getElementsByClassName("buy-button");
         Array.prototype.forEach.call(buyBtn, function (el) {
-            el.addEventListener('click', function (eventObj) {
-                new CartItem(eventObj);
+            el.addEventListener('click', function () {
+                new CartItem();
             });
         })
     }
@@ -44,25 +44,19 @@ class GoodItem {
         if (placeToRender) {
             const block = document.createElement('div')
             block.className = "goods-item";
-            block.innerHTML = `<img class ="goods-image" src="img/${this.name}.png" alt="${this.name}"><h3 class ="name">${this.name}</h3><p class="price">${this.price}$</p><button class="buy-button" type="button">Купить</button>`
+            block.innerHTML = `<img class ="goods-image" src="img/${this.name}.png" alt="${this.name}"><h3 class ="name">${this.name}</h3><p class="price">${this.price}$<button class="buy-button" type="button">Купить</button></p>`
             placeToRender.appendChild(block)
         }
     }
 }
 
-class CartItem {
-    constructor(eventObj) {
-        this.name = eventObj.target.closest("div").querySelector('.name').innerText;
-        this.price = eventObj.target.closest("div").querySelector('.price').innerText;
-        console.log(this.name, this.price)
-        this.render();
-    }
+class CartItem extends List {
     render() {
         const placeToRender = document.querySelector('.cart')
         if (placeToRender) {
             const block = document.createElement('div')
             block.className = "cart-item";
-            block.innerHTML = `<p class ="cartItem">${this.name} ${this.price} <button class="buy-button" type="button">Удалить</button></p>`
+            block.innerHTML = `<p class ="name"></p><p class="price"><button class="buy-button" type="button">Удалить</button></p>`
             placeToRender.appendChild(block)
         }
     }

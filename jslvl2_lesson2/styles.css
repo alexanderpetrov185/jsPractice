@@ -11,7 +11,7 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: end;
-    background-color: black;
+    background-color: rgb(87, 37, 37);
 }
 
 .goods-list {
