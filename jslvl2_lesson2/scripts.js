@@ -1,5 +1,5 @@
 let AllCartItems = []
-let Amount = [1, 1, 1, 1]
+let Amount = []
 let ItemPrice = []
 
 class Main {
@@ -33,12 +33,18 @@ class List extends Main {
     }
 
     render() {
+        for (let i = 0; i != this.items.length; i++) {
+            Amount[i] = 1
+        }
         this.items.forEach(good => {
             good.render()
         })
     }
-}
 
+    getMore() {
+
+    }
+}
 
 class Cart extends Main {
     constructor(eventObj) {

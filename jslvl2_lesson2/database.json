@@ -15,6 +15,30 @@
         {
             "name": "Shoes",
             "price": 1500
+        },
+        {
+            "name": "Hat",
+            "price": 55
+        },
+        {
+            "name": "Watch",
+            "price": 500
+        },
+        {
+            "name": "Jacket2",
+            "price": 50
+        },
+        {
+            "name": "Shoes2",
+            "price": 1500
+        },
+        {
+            "name": "Socks2",
+            "price": 50
+        },
+        {
+            "name": "Hat2",
+            "price": 1500
         }
     ]
 }
