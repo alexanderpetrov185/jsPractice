@@ -3,12 +3,21 @@ const fs = require('fs')
 
 const server = http.createServer((req, res) => {
     console.log(req.url)
-    const body = req.url === '/'
-        ? fs.readFileSync('./jslvl2_lesson2/index.html')
-        : fs.readFileSync('./jslvl2_lesson2/' + req.url)
+
+    const publicPath = './jslvl2_lesson2'
+
+    let body = null
+    try {
+        body = fs.readFileSync(`${publicPath}${req.url}`)
+    } catch (e) {
+        console.log(e)
+        body = fs.readFileSync(`${publicPath}/index.html`)
+    }
     res.end(body)
 })
 
-server.listen(3000)
 
-console.log('Server started')
+const port = process.env.PORT || 3000
+server.listen(port)
+
+console.log(`Server started on port ${port}!`)
